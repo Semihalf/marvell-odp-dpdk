@@ -277,6 +277,13 @@ static int start_pkt_dpdk(pktio_entry_t *pktio_entry)
 		}
 	}
 
+	ret = rte_eth_dev_start(portid);
+	if (ret < 0) {
+		ODP_ERR("rte_eth_dev_start:err=%d, port=%u\n",
+			ret, portid);
+		return ret;
+	}
+
 	rte_eth_promiscuous_enable(portid);
 	/* Some DPDK PMD vdev like pcap do not support promisc mode change. Use
 	 * system call for them. */
@@ -286,13 +293,6 @@ static int start_pkt_dpdk(pktio_entry_t *pktio_entry)
 		pkt_dpdk->vdev_sysc_promisc = 0;
 
 	rte_eth_allmulticast_enable(portid);
-
-	ret = rte_eth_dev_start(portid);
-	if (ret < 0) {
-		ODP_ERR("rte_eth_dev_start:err=%d, port=%u\n",
-			ret, portid);
-		return ret;
-	}
 
 	return 0;
 }
