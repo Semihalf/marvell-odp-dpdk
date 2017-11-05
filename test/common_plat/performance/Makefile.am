@@ -3,7 +3,6 @@ include $(top_srcdir)/test/Makefile.inc
 TESTS_ENVIRONMENT += TEST_DIR=${builddir}
 
 EXECUTABLES = odp_bench_packet$(EXEEXT) \
-			  odp_crypto$(EXEEXT) \
 			  odp_pktio_perf$(EXEEXT)
 
 COMPILE_ONLY = odp_l2fwd$(EXEEXT) \
@@ -26,8 +25,6 @@ bin_PROGRAMS = $(EXECUTABLES) $(COMPILE_ONLY)
 
 odp_bench_packet_LDFLAGS = $(AM_LDFLAGS) -static
 odp_bench_packet_CFLAGS = $(AM_CFLAGS) -I${top_srcdir}/test
-odp_crypto_LDFLAGS = $(AM_LDFLAGS) -static
-odp_crypto_CFLAGS = $(AM_CFLAGS) -I${top_srcdir}/test
 odp_pktio_perf_LDFLAGS = $(AM_LDFLAGS) -static
 odp_pktio_perf_CFLAGS = $(AM_CFLAGS) -I${top_srcdir}/test
 odp_l2fwd_LDFLAGS = $(AM_LDFLAGS) -static
@@ -44,7 +41,6 @@ noinst_HEADERS = \
 		  dummy_crc.h
 
 dist_odp_bench_packet_SOURCES = odp_bench_packet.c
-dist_odp_crypto_SOURCES = odp_crypto.c
 dist_odp_pktio_ordered_SOURCES = odp_pktio_ordered.c
 dist_odp_sched_latency_SOURCES = odp_sched_latency.c
 dist_odp_scheduling_SOURCES = odp_scheduling.c

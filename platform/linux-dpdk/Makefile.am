@@ -40,7 +40,6 @@ odpapiinclude_HEADERS = \
 		  $(srcdir)/include/odp/api/compiler.h \
 		  $(srcdir)/include/odp/api/cpu.h \
 		  $(srcdir)/include/odp/api/cpumask.h \
-		  $(srcdir)/include/odp/api/crypto.h \
 		  $(srcdir)/include/odp/api/debug.h \
 		  $(srcdir)/include/odp/api/deprecated.h \
 		  $(srcdir)/include/odp/api/errno.h \
@@ -86,7 +85,6 @@ odpapiplatinclude_HEADERS = \
 		  $(srcdir)/include/odp/api/plat/byteorder_types.h \
 		  $(srcdir)/include/odp/api/plat/classification_types.h \
 		  $(srcdir)/include/odp/api/plat/cpumask_types.h \
-		  $(srcdir)/include/odp/api/plat/crypto_types.h \
 		  $(srcdir)/include/odp/api/plat/event_types.h \
 		  $(srcdir)/include/odp/api/plat/init_types.h \
 		  $(srcdir)/include/odp/api/plat/packet_flag_inlines.h \
@@ -135,7 +133,6 @@ noinst_HEADERS = \
 		  ${top_srcdir}/platform/linux-generic/include/odp_classification_datamodel.h \
 		  ${top_srcdir}/platform/linux-generic/include/odp_classification_inlines.h \
 		  ${top_srcdir}/platform/linux-generic/include/odp_classification_internal.h \
-		  ${top_srcdir}/platform/linux-generic/include/odp_crypto_internal.h \
 		  ${top_srcdir}/platform/linux-generic/include/odp_forward_typedefs_internal.h \
 		  ${top_srcdir}/platform/linux-generic/include/odp_internal.h \
 		  ${srcdir}/include/odp_packet_dpdk.h \
@@ -179,7 +176,6 @@ __LIB__libodp_dpdk_la_SOURCES = \
 			   ../linux-generic/odp_cpu.c \
 			   ../linux-generic/odp_cpumask.c \
 			   ../linux-generic/odp_cpumask_task.c \
-			   odp_crypto.c \
 			   odp_errno.c \
 			   ../linux-generic/odp_event.c \
 			   ../linux-generic/odp_hash.c \

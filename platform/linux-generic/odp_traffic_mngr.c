@@ -18,6 +18,9 @@
 #include <sched.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #include <odp/api/std_types.h>
 #include <protocols/eth.h>
 #include <protocols/ip.h>
@@ -161,6 +164,15 @@ static odp_bool_t pkt_descs_not_equal(pkt_desc_t *pkt_desc1,
 		return 0;
 	else
 		return 1;
+}
+
+int32_t odp_random_data(uint8_t *buf, uint32_t len, odp_random_kind_t kind)
+{
+	(void)kind;
+	int fd = open("/dev/urandom", O_RDONLY);
+	int ret = read(fd, buf, len);
+	close(fd);
+	return ret;
 }
 
 static void tm_init_random_data(tm_random_data_t *tm_random_data)

@@ -31,8 +31,6 @@ void odp_event_free(odp_event_t event)
 	case ODP_EVENT_TIMEOUT:
 		odp_timeout_free(odp_timeout_from_event(event));
 		break;
-	case ODP_EVENT_CRYPTO_COMPL:
-		odp_crypto_compl_free(odp_crypto_compl_from_event(event));
 		break;
 	default:
 		ODP_ABORT("Invalid event type: %d\n", odp_event_type(event));
