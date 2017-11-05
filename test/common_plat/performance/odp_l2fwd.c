@@ -40,7 +40,7 @@
 /** @def SHM_PKT_POOL_BUF_SIZE
  * @brief Buffer size of the packet pool buffer
  */
-#define SHM_PKT_POOL_BUF_SIZE  1856
+#define SHM_PKT_POOL_BUF_SIZE  2040
 
 /** @def MAX_PKT_BURST
  * @brief Maximum number of packet in a burst
